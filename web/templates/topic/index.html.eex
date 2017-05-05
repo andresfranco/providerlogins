@@ -3,13 +3,20 @@
 <ul class="collection">
 <%= for topic <- @topics do %>
    <li class="collection-item">
+<<<<<<< HEAD
     <%= link topic.title, to: topic_path(@conn, :show,topic) %>
     <%= if @conn.assigns.user && @conn.assigns.user.id == topic.user_id do %>
+=======
+    <%= topic.title %>
+
+    <%= if @conn.assigns.user && @conn.assigns.user.id == topic.user_id  do %>
+>>>>>>> bb1d356ba402d156d376c736c32ed3cb508a25df
     <div class="right">
       <%= link "Edit", to: topic_path(@conn, :edit ,topic) %>
       <%= link "Delete", to: topic_path(@conn, :delete ,topic),method: :delete %>
     </div>
     <% end %>
+
    </li>
 <% end %>
 </ul>
